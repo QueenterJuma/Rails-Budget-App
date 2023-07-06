@@ -1,0 +1,12 @@
+<% content_for :nav_bar, "navbar not required"%>
+<div class="home-container">
+  <div class="home-title-container">
+    <h1 class="home-title proxima-bold">Queen's Finance</h1>
+  </div>
+  <div class="home-btn">
+    <div class="d-grid gap-2 mt-5" style="width: 100%;">
+      <%= link_to "LOG IN", new_user_session_path, class: "btn btn-col btn-lg btn-color" %>
+      <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-col btn-lg" %>
+    </div>
+  </div>
+</div>
