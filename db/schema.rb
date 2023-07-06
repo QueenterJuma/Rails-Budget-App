@@ -10,26 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_06_014638) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_06_183541) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "group_products", force: :cascade do |t|
-    t.bigint "groups_id", null: false
-    t.bigint "products_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["groups_id"], name: "index_group_products_on_groups_id"
-    t.index ["products_id"], name: "index_group_products_on_products_id"
-  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "icon"
-    t.bigint "users_id", null: false
+    t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_groups_on_users_id"
+    t.index ["author_id"], name: "index_groups_on_author_id"
+  end
+
+  create_table "groups_products", id: false, force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.bigint "product_id", null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -54,8 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_014638) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "group_products", "groups", column: "groups_id"
-  add_foreign_key "group_products", "products", column: "products_id"
-  add_foreign_key "groups", "users", column: "users_id"
+  add_foreign_key "groups", "users", column: "author_id"
   add_foreign_key "products", "users", column: "author_id"
 end
