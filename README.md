@@ -69,7 +69,7 @@
 
 ## 📺 Presentation <a name="presentation"></a>
 
-- [Link to video presentation](....)
+- [Link to video presentation](https://www.loom.com/share/4ded8a799ef34b109c72b68e8f58a119)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
