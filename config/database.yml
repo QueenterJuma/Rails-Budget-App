@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: Rails_Budget_App_production
-  username: Rails_Budget_App
-  password: <%= ENV["RAILS_BUDGET_APP_DATABASE_PASSWORD"] %>
+  database: mysite_production
+  username: mysite
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
